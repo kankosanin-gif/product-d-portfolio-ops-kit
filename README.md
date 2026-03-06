@@ -19,3 +19,6 @@ Primary source files live under:
 - `agent-org/hooks/`
 - `agent-org/reports/`
 - `docs/ops/`
+
+## Governance templates
+- Gate Decision Log: \n- Escalation SLA: \n- Proof-of-Work template: \n

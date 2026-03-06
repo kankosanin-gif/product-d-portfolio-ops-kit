@@ -25,3 +25,6 @@ Primary source files live under:
 ## Operational records
 - Work-item log: `records/work-item-log.md`
 - Weekly review: `reviews/WEEKLY_REVIEW.md`
+
+## Symphony runbook
+- Work-item / Proof-of-Work flow: `orchestration/SYMPHONY_RUNBOOK.md`

@@ -1,0 +1,48 @@
+# Hook definitions (TOML)
+
+[[hooks]]
+id = "dirty-working-tree"
+enabled = true
+if_any = [" M ", "?? "]
+
+[hooks.when]
+type = "contains"
+file = "agent-org/reports/hourly-status.md"
+text = "Git Working Tree"
+
+[hooks.action]
+type = "append_markdown"
+file = "agent-org/reports/action-queue.md"
+title = "Working tree has pending changes"
+body = "Create or update task contracts for pending changes and classify by manager owner."
+
+[[hooks]]
+id = "warn-topline"
+enabled = true
+
+[hooks.when]
+type = "contains"
+file = "agent-org/reports/hourly-status.md"
+text = "Topline: **WARN"
+
+[hooks.action]
+type = "append_markdown"
+file = "agent-org/reports/action-queue.md"
+title = "Topline WARN detected"
+body = "Escalate to relevant manager and record blocker in weekly review format."
+
+[[hooks]]
+id = "contract-id-enforcement"
+enabled = true
+if_any = [" M ", "?? "]
+
+[hooks.when]
+type = "contains"
+file = "agent-org/reports/hourly-status.md"
+text = "Git Working Tree"
+
+[hooks.action]
+type = "append_markdown"
+file = "agent-org/reports/action-queue.md"
+title = "Contract ID enforcement"
+body = "Detected pending changes. Ensure each active change maps to a Task Contract ID in execution ledger before merge."
